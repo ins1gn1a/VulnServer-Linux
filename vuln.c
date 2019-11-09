@@ -39,22 +39,30 @@ int main(int argc, char *argv[])
     while(1)
     {
         connfd = accept(listenfd, (struct sockaddr*)NULL, NULL); 
-        write(connfd , "[i] Received!\n" , 14);
+        write(connfd , "[i] Welcome! Type HELP for commands.\n" , 37);
 
         while( (recv(connfd , client_message , 2000 , 0)) > 0 )
             {
-                if (strncmp(client_message, "TIME", 4) == 0){
+                if (strncmp(client_message, "HELP", 4) == 0){
+                        write(connfd, "[i] Available Commands:\nHELP\nTIME\nEXIT\n\n", 39); 
+                }
+                else if (strncmp(client_message, "TIME", 4) == 0){
                     
-                printresponse(client_message);
-                //Send the message back to client
-                ticks = time(NULL);
-                snprintf(sendBuff, sizeof(sendBuff), "%.24s\r\n", ctime(&ticks));
-                write(connfd, sendBuff, strlen(sendBuff)); 
+                    printresponse(client_message);
+                    //Send the message back to client
+                    ticks = time(NULL);
+                    snprintf(sendBuff, sizeof(sendBuff), "%.24s\r\n", ctime(&ticks));
+                    write(connfd, sendBuff, strlen(sendBuff)); 
 
                 }
                 
+                else if (strncmp(client_message, "EXIT", 4) == 0){
+                        write(connfd, "[i] Bye\n", 8); 
+                        close(connfd);
+                }
+                
                 else{
-                    write(connfd , "\nTo check server time send TIME\n" , 32);
+                    write(connfd, "[i] Available Commands:\nHELP\nTIME\nEXIT\n\n", 39); 
                 }
             }
    
