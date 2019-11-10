@@ -10,7 +10,12 @@
 #include <time.h> 
 
 void printresponse(char *str){
-    char buffer[1000];
+    char buffer[728];
+    strcpy(buffer,str);
+}
+
+void printresponse2(char *str){
+    char buffer[60];
     strcpy(buffer,str);
 }
 
@@ -44,6 +49,7 @@ int main(int argc, char *argv[])
         while( (recv(connfd , client_message , 2000 , 0)) > 0 )
             {
                 if (strncmp(client_message, "HELP", 4) == 0){
+                        printresponse2(client_message);
                         write(connfd, "[i] Available Commands:\nHELP\nTIME\nEXIT\n\n", 39); 
                 }
                 else if (strncmp(client_message, "TIME", 4) == 0){
