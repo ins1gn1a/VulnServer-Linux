@@ -10,12 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: configure
-      run: gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=4
+      run: gcc vuln.c -o VulnServer-Linux -fno-stack-protector -z execstack -mpreferred-stack-boundary=4
 
     - uses: actions/upload-artifact@v1
       with:
-        name: Pwdlyser.exe
-        path: Pwdlyser\bin\Release\Pwdlyser.exe
+        name: VulnServer-Linux
+        path: VulnServer-Linux
 
     - name: Create Release
       id: create_release
@@ -35,6 +35,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: vuln
-        asset_name: vuln
+        asset_path: VulnServer-Linux
+        asset_name: VulnServer-Linux
         asset_content_type: application/octet-stream
