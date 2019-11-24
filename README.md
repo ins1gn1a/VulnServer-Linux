@@ -1,3 +1,10 @@
 # VulnServer
 
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/ins1gn1a/VulnServer-Linux.svg)](https://GitHub.com/ins1gn1a/VulnServer-Linux/pull/)
+[![GitHub contributors](https://img.shields.io/github/contributors/ins1gn1a/VulnServer-Linux.svg)](https://GitHub.com/ins1gn1a/VulnServer-Linux/graphs/contributors/)
+![](https://img.shields.io/github/issues/ins1gn1a/VulnServer-Linux)
+![](https://img.shields.io/github/stars/ins1gn1a/VulnServer-Linux)
+![](https://img.shields.io/github/license/ins1gn1a/VulnServer-Linux)
+
+## Compile
 `gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=2`
