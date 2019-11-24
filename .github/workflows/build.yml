@@ -11,3 +11,30 @@ jobs:
     - uses: actions/checkout@v1
     - name: configure
       run: gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=4
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Pwdlyser.exe
+        path: Pwdlyser\bin\Release\Pwdlyser.exe
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: vuln
+        asset_name: vuln
+        asset_content_type: application/octet-stream
