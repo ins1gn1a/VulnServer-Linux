@@ -1,5 +1,5 @@
 # VulnServer
-[![CI Status](https://github.com/ins1gn1a/VulnServer-Linux/workflows/build/badge.svg?branch=master)](https://github.com/ins1gn1a/VulnServer-Linux
+[![CI Status](https://github.com/ins1gn1a/VulnServer-Linux/workflows/build/badge.svg?branch=master)](https://github.com/ins1gn1/VulnServer-Linux
 /actions) 
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/ins1gn1a/VulnServer-Linux.svg)](https://GitHub.com/ins1gn1a/VulnServer-Linux/pull/)
 [![GitHub contributors](https://img.shields.io/github/contributors/ins1gn1a/VulnServer-Linux.svg)](https://GitHub.com/ins1gn1a/VulnServer-Linux/graphs/contributors/)
