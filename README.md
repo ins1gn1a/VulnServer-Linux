@@ -6,6 +6,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/ins1gn1a/vulnserver-linux)](https://github.com/ins1gn1a/vulnserver-linux/stargazers)
 [![GitHub license](https://img.shields.io/github/license/ins1gn1a/vulnserver-linux)](https://github.com/ins1gn1a/VulnServer-Linux/blob/master/LICENSE)
 
+This program should not be run on any production systems or networks as it is purposely vulnerable. I will not be held accountable for any usage of this program and you run this at your own risk.
+
 ## Compile
 ```
 wget https://raw.githubusercontent.com/ins1gn1a/VulnServer-Linux/master/vuln.c
