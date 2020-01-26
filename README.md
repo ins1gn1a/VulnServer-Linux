@@ -7,7 +7,10 @@
 [![GitHub license](https://img.shields.io/github/license/ins1gn1a/vulnserver-linux)](https://github.com/ins1gn1a/VulnServer-Linux/blob/master/LICENSE)
 
 ## Compile
-`gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=2`
+```
+wget https://raw.githubusercontent.com/ins1gn1a/VulnServer-Linux/master/vuln.c
+gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=2
+```
 
 ## References
 Inspiration from [Stephen Bradshaw's vulnserver](https://github.com/stephenbradshaw/vulnserver/)!
