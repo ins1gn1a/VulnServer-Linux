@@ -8,10 +8,15 @@
 
 This program should not be run on any production systems or networks as it is purposely vulnerable. I will not be held accountable for any usage of this program and you run this at your own risk.
 
+## Prerequisites
+```
+apt install gcc gcc-multilib
+wget https://raw.githubusercontent.com/ins1gn1a/VulnServer-Linux/master/vuln.c
+```
+
 ## Compile
 ```
-wget https://raw.githubusercontent.com/ins1gn1a/VulnServer-Linux/master/vuln.c
-gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=2
+gcc vuln.c -o vuln -fno-stack-protector -z execstack -mpreferred-stack-boundary=2 -m32
 ```
 
 ## References
